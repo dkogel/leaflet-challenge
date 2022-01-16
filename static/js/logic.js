@@ -46,8 +46,34 @@ function getColor(d) {
   d > 11   ? '#c7e9b4' :
   d > 5    ? '#edf8b1' :
              '#ffffd9';
-
 };
+
+// adding a legend
+let legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    let div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 5, 11, 22, 44, 87.5, 175, 350, 700],
+        labels = [];
+
+    let legendInfo = "<h3>Earthquake Depth in Km </h3>"
+    div.innerHTML = legendInfo;
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (let i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+
+
+legend.addTo(map);
 
 
 
