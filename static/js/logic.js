@@ -52,7 +52,7 @@ function getColor(d) {
 };
 
 // adding a legend
-let legend = L.control({position: 'topright'});
+let legend = L.control();
 
 legend.onAdd = function (map) {
 
@@ -63,7 +63,7 @@ legend.onAdd = function (map) {
     let legendInfo = "<h3>Earthquake Depth in Km </h3>"
     div.innerHTML = legendInfo;
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+    // loop through our depth intervals and generate a label with a colored square for each interval
     for (let i = 0; i < grades.length; i++) {
         div.innerHTML +=
             
