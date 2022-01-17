@@ -52,7 +52,7 @@ function getColor(d) {
 };
 
 // adding a legend
-let legend = L.control({position: 'bottomright'});
+let legend = L.control({position: 'topright'});
 
 legend.onAdd = function (map) {
 
