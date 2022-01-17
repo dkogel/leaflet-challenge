@@ -9,6 +9,6 @@ To view the website:
 
 Website will look similar to this:
 
-![This is an image](images/website_screenshot)
+![website sample image](Images/website_screenshot.PNG)
 
 
