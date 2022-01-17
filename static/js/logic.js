@@ -14,7 +14,7 @@ let map = L.map("map", {
 });
 
 // add markers to map
-// (needs reverse b/c geoJson list coorindates as [LONG, LAT])
+// (needs reverse b/c geoJson list coordinates as [LONG, LAT])
 
 function mapFeatures(Data) {
   Data.map( function(d) {
@@ -30,6 +30,9 @@ function mapFeatures(Data) {
       fillOpacity: 1,
       radius: d.properties.mag * 23000
     })
+    .bindPopup('<H2>'+ d.properties.place + '</H2><h4>Magnitude: '
+    + d.properties.mag + '</h4><h4>Mag. Type: '
+    + d.properties.magType + '</h4>')
     .addTo(map)
 
   });
